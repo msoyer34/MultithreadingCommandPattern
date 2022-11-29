@@ -10,7 +10,6 @@ typedef void * (*THREADFUNCPTR)(void *);
 class ICommand{
 public:
     virtual void* execute(void *arg) = 0;
-    pthread_t thread_id;
 };
 
 class IRunnable{
@@ -19,6 +18,7 @@ public:
     virtual void finish() = 0;
     std::string result_;
     std::vector<int> inputs_;
+    pthread_t thread_id;
 };
 
 
